@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=2]
+
+[ext_resource path="res://Images/Sky.png" type="Texture" id=1]
+
+[sub_resource type="PanoramaSky" id=14]
+panorama = ExtResource( 1 )
+
+[resource]
+background_mode = 2
+background_sky = SubResource( 14 )
+ambient_light_color = Color( 0.3, 0.3, 0.3, 1 )
+ambient_light_energy = 1.5
+ambient_light_sky_contribution = 0.75
+tonemap_mode = 2

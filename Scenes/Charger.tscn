@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Models/Charger.glb" type="PackedScene" id=1]
+[ext_resource path="res://Images/Charger_Symbol.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Charger.gd" type="Script" id=3]
+[ext_resource path="res://Audio/Charge_Sound.wav" type="AudioStream" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.74902, 0.74902, 0.45098, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.74902, 0.74902, 0.45098, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.625, 0.75, 0.25 )
+
+[sub_resource type="SphereShape" id=5]
+radius = 3.0
+
+[node name="Charger" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Charger" parent="." index="0"]
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="." index="1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+shape = SubResource( 4 )
+
+[node name="Area" type="Area" parent="." index="2"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+shape = SubResource( 5 )
+
+[node name="Charge_Sound" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource( 4 )
+unit_db = -8.0
+unit_size = 4.0
+
+[connection signal="body_entered" from="Area" to="." method="charge_flashlight"]

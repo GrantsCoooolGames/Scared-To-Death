@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Charge_Sound.wav-803a7db7d40f7bc4f070ae1341ba3a87.sample"
+
+[deps]
+
+source_file="res://Audio/Charge_Sound.wav"
+dest_files=[ "res://.import/Charge_Sound.wav-803a7db7d40f7bc4f070ae1341ba3a87.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
